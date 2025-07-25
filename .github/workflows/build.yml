@@ -28,6 +28,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
+      - name: Clean old builds (optional)
+        run: rm -f **/*.cs3 || true
+
       - name: Build Plugin
         run: |
           chmod +x ./gradlew
